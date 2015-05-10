@@ -2,6 +2,12 @@
     <string name="app_name">Pace</string>
     <string name="title_activity_main">Pace</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="info">
+        Set Pebble settings in Endomondo to the following values:\n
+        Zone 1: Duration\n
+        Zone 2: Pace\n
+        Zone 3: Distance\n
+        Notification will be triggered every 750 meters
+    </string>
     <string name="action_settings">Settings</string>
 </resources>
