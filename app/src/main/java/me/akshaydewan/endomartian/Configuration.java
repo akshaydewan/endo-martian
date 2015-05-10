@@ -1,10 +1,8 @@
 package me.akshaydewan.endomartian;
 
-import java.util.HashMap;
-
 public class Configuration {
 
-  public static final float NOTIFY_PER_DISTANCE = 0.1f;
+  public static final float NOTIFY_PER_DISTANCE = 0.05f;
 
   public static int distanceKey() {
     return 15;

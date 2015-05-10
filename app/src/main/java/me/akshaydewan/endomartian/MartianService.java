@@ -18,13 +18,13 @@ public class MartianService extends Service {
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
     boolean shouldReset = intent.getBooleanExtra(RESET_EXTRA, false);
-    if(shouldReset) {
+    if (shouldReset) {
       reset();
     }
     float distance = intent.getFloatExtra(DISTANCE_EXTRA, 0);
     String pace = intent.getStringExtra(PACE_EXTRA);
     String paceUnit = intent.getStringExtra(PACE_UNIT_EXTRA);
-    if(distance - prevDistance >= Configuration.NOTIFY_PER_DISTANCE) {
+    if (distance - prevDistance >= Configuration.NOTIFY_PER_DISTANCE) {
       createNotification(pace, paceUnit);
       prevDistance = distance;
     }
@@ -39,9 +39,9 @@ public class MartianService extends Service {
     NotificationCompat.Builder mBuilder =
         new NotificationCompat.Builder(this)
             .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentText(getString(R.string.pace))
+            .setContentTitle(getString(R.string.pace))
             .setContentText(pace + " " + paceUnit);
-    ((NotificationManager)getSystemService(NOTIFICATION_SERVICE)).notify(1, mBuilder.build());
+    ((NotificationManager) getSystemService(NOTIFICATION_SERVICE)).notify(1, mBuilder.build());
   }
 
   @Override
