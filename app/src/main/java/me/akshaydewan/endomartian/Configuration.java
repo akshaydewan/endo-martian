@@ -2,7 +2,7 @@ package me.akshaydewan.endomartian;
 
 public class Configuration {
 
-  public static final float NOTIFY_PER_DISTANCE = 0.05f;
+  public static final float NOTIFY_PER_DISTANCE = 0.75f;
 
   public static final int ZONE_1_UNIT = 16;
   public static final int ZONE_2_UNIT = 17;
