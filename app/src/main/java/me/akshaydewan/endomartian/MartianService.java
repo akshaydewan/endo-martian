@@ -17,6 +17,9 @@ public class MartianService extends Service {
 
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
+    if(intent == null)
+      return super.onStartCommand(intent, flags, startId);
+
     boolean shouldReset = intent.getBooleanExtra(RESET_EXTRA, false);
     if (shouldReset) {
       reset();
@@ -39,7 +42,7 @@ public class MartianService extends Service {
     NotificationCompat.Builder mBuilder =
         new NotificationCompat.Builder(this)
             .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentTitle(getString(R.string.pace))
+            .setContentTitle("")
             .setContentText(pace + " " + paceUnit);
     ((NotificationManager) getSystemService(NOTIFICATION_SERVICE)).notify(1, mBuilder.build());
   }

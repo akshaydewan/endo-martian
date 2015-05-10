@@ -4,27 +4,35 @@ public class Configuration {
 
   public static final float NOTIFY_PER_DISTANCE = 0.05f;
 
+  public static final int ZONE_1_UNIT = 16;
+  public static final int ZONE_2_UNIT = 17;
+  public static final int ZONE_3_UNIT = 18;
+
+  private static final int ZONE_1_VALUE = 11;
+  public static final int ZONE_2_VALUE = 13;
+  public static final int ZONE_3_VALUE = 15;
+
   public static int distanceKey() {
-    return 15;
+    return ZONE_3_VALUE;
   }
 
   public static int distanceUnitKey() {
-    return 18;
+    return ZONE_3_UNIT;
   }
 
   public static int paceKey() {
-    return 13;
+    return ZONE_2_VALUE;
   }
 
   public static int paceUnitKey() {
-    return 17;
+    return ZONE_2_UNIT;
   }
 
   public static int durationKey() {
-    return 11;
+    return ZONE_1_VALUE;
   }
 
   public static int durationUnitKey() {
-    return 16;
+    return ZONE_1_UNIT;
   }
 }

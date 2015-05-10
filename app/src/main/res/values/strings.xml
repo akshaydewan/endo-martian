@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">EndoMartian</string>
-    <string name="title_activity_main">EndoMartian</string>
+    <string name="app_name">Pace</string>
+    <string name="title_activity_main">Pace</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="pace">Pace</string>
 </resources>
