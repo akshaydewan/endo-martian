@@ -27,7 +27,7 @@ public class MartianService extends Service {
     float distance = intent.getFloatExtra(DISTANCE_EXTRA, 0);
     String pace = intent.getStringExtra(PACE_EXTRA);
     String paceUnit = intent.getStringExtra(PACE_UNIT_EXTRA);
-    if (distance - prevDistance >= Configuration.NOTIFY_PER_DISTANCE) {
+    if (distance - prevDistance >= Configuration.getNotifyPerDistance(this)) {
       createNotification(pace, paceUnit);
       prevDistance = distance;
     }
