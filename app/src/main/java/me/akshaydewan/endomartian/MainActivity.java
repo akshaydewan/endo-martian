@@ -8,16 +8,27 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
 
+  private MetricSpinner metricSpinner;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    initSpinner();
+  }
+
+  private void initSpinner() {
+    Spinner spinner = (Spinner) findViewById(R.id.metric_spinner);
+    metricSpinner = new MetricSpinner(spinner);
   }
 
   @Override
@@ -25,6 +36,8 @@ public class MainActivity extends Activity {
     super.onResume();
     EditText textBox = (EditText) findViewById(R.id.notify_per_distance);
     textBox.setText(String.valueOf(Configuration.getNotifyPerDistance(this)));
+
+    metricSpinner.setSelectedValue(Configuration.getNotifyMetric(this));
   }
 
   public void saveConfiguration(View view) {
@@ -38,7 +51,8 @@ public class MainActivity extends Activity {
       showInvalidValueToast();
       return;
     }
-    if(notifyPerDistanceVal > 0 && Configuration.setNotifyPerDistance(notifyPerDistanceVal, this)) {
+    if(notifyPerDistanceVal > 0 &&
+        Configuration.saveConfiguration(notifyPerDistanceVal, metricSpinner.getSelectedValue(), this)) {
       Toast toast = Toast.makeText(this, "Saved successfully", Toast.LENGTH_SHORT);
       toast.show();
       return;
