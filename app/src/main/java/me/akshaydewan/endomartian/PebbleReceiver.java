@@ -24,6 +24,7 @@ public class PebbleReceiver extends BroadcastReceiver {
       Intent notifyIntent = new Intent(context, MartianService.class);
       notifyIntent.putExtra(MartianService.RESET_EXTRA, isFirstTransaction(transactionId));
       notifyIntent.putExtra(MartianService.DISTANCE_EXTRA, dataReader.getCurrentDistance());
+      notifyIntent.putExtra(MartianService.DISTANCE_UNIT_EXTRA, dataReader.getDistanceUnit());
       notifyIntent.putExtra(MartianService.PACE_EXTRA, dataReader.getCurrentPace());
       notifyIntent.putExtra(MartianService.PACE_UNIT_EXTRA, dataReader.getPaceUnit());
       context.startService(notifyIntent);
