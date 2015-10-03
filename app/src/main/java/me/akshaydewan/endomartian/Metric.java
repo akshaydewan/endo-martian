@@ -2,8 +2,7 @@ package me.akshaydewan.endomartian;
 
 public enum Metric {
   DISTANCE("Distance"),
-  PACE("Pace"),
-  DURATION("Duration");
+  PACE("Pace");
 
   private final String name;
 

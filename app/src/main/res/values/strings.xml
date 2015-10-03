@@ -11,7 +11,6 @@
   <string name="action_settings">Settings</string>
   <string name="notify_for_label">Notify for</string>
   <string-array name="metric">
-    <item>Duration</item>
     <item>Pace</item>
     <item>Distance</item>
   </string-array>
